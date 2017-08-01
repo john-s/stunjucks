@@ -6,7 +6,7 @@ You supply the templates and specify the routes and context.  Stunjucks builds a
 
 ### Use case
 
-The main use case for Stunjucks is creating static sites that are served directly from a CDN (GitHub Pages, Amazon S3, Firebase) or from a traditional webserver (Nginx, Apache).
+The main use case for Stunjucks is creating static sites that are served directly from a CDN (e.g. GitHub Pages, Amazon S3) or from a traditional webserver (e.g. Nginx, Apache).
 
 Another use case is quick migration of high-traffic urls off of Python frameworks that use similar templating engines, such as the Jinja2 and Django template engines.  By making high-traffic, non-dynamic pages (e.g. root hero page, landing pages, FAQs, about us pages) totally static, one can avoid many scalability issues. Since Nunjucks is very similar to Jinja2 and therefore the Django templating framework, migrating the templates to Nunjucks is fairly trivial.
 
