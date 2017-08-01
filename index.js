@@ -2,7 +2,7 @@ const fs = require("fs");
 const mkdirp = require("mkdirp");
 const rimraf = require("rimraf");
 const nunjucks = require('nunjucks');
-const config = require('./config');
+const config = require('./stunjucks.config.js');
 
 
 const renderTemplate = function(path, templateName, context) {
@@ -13,7 +13,7 @@ const renderTemplate = function(path, templateName, context) {
   context.config = config;
   context.buildTime = Date.now();
 
-  renderer = nunjucks.configure(cfgemplateDir);
+  renderer = nunjucks.configure(config.templateDir);
 
   function _render() {
     renderer.render(templateName, context, function(err, html){
@@ -41,12 +41,13 @@ const renderTemplate = function(path, templateName, context) {
   });
 }
 
-function stunjucks(cfg){
-
+function stunjucks(){
   // Use rimraf to delete and rerender the site
-  rimraf(cfg.outputDir, function() {
+  rimraf(config.outputDir, function() {
     return routes.map(function(route) {
       return renderTemplate(route.url, route.templateName, route.context);
     });
   });
 }
+
+model.exports = stunjucks;
