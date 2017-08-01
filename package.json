@@ -1,0 +1,24 @@
+{
+  "name": "stunjucks",
+  "version": "1.0.0",
+  "description": "Stunjucks is a static site pico-framework that uses the Nunjucks templating engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://john-s@github.com/john-s/stunjucks.git"
+  },
+  "keywords": [
+    "static",
+    "nunjucks",
+    "html"
+  ],
+  "author": "John Schulte <john@argyle.ai> (http://www.argyle.ai)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/john-s/stunjucks/issues"
+  },
+  "homepage": "https://github.com/john-s/stunjucks#readme"
+}
