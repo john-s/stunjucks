@@ -1,8 +1,10 @@
+'use strict';
+
 const fs = require("fs");
 const mkdirp = require("mkdirp");
 const rimraf = require("rimraf");
-const nunjucks = require('nunjucks');
-const config = require('./stunjucks.config.js');
+const nunjucks = require("nunjucks");
+const config = require("./stunjucks.config.js");
 
 
 const renderTemplate = function(path, templateName, context) {
@@ -41,7 +43,7 @@ const renderTemplate = function(path, templateName, context) {
   });
 }
 
-function stunjucks(){
+module.exports = function(){
   // Use rimraf to delete and rerender the site
   rimraf(config.outputDir, function() {
     return routes.map(function(route) {
@@ -49,5 +51,3 @@ function stunjucks(){
     });
   });
 }
-
-model.exports = stunjucks;
