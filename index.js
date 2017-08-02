@@ -42,6 +42,7 @@ const renderTemplate = function(config, url, templateName, context) {
 }
 
 module.exports = function(config){
+  // clear existing build if any
   rimraf.sync('./test/static/', {});
   config.routes.map(function(route) {
     renderTemplate(config, route.url, route.templateName, route.context);
