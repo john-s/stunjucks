@@ -1,9 +1,9 @@
 'use strict';
 
-const fs = require("fs");
-const mkdirp = require("mkdirp");
-const rimraf = require("rimraf");
-const nunjucks = require("nunjucks");
+const fs = require('fs');
+const mkdirp = require('mkdirp');
+const nunjucks = require('nunjucks');
+var rimraf = require('rimraf');
 
 
 const renderTemplate = function(config, url, templateName, context) {
@@ -42,10 +42,8 @@ const renderTemplate = function(config, url, templateName, context) {
 }
 
 module.exports = function(config){
-  // Use rimraf to delete and rerender the site
-  rimraf(config.outputDir, function() {
-    return config.routes.map(function(route) {
-      return renderTemplate(config, route.url, route.templateName, route.context);
-    });
+  rimraf.sync('./test/static/', {});
+  config.routes.map(function(route) {
+    renderTemplate(config, route.url, route.templateName, route.context);
   });
 }
