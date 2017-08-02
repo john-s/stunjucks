@@ -10,6 +10,32 @@ The main use case for Stunjucks is creating static sites that are served directl
 
 Another use case is quick migration of high-traffic urls off of Python frameworks that use similar templating engines, such as the Jinja2 and Django template engines.  By making high-traffic, non-dynamic pages (e.g. root hero page, landing pages, FAQs, about us pages) totally static, one can avoid many scalability issues. Since Nunjucks is very similar to Jinja2 and therefore the Django templating framework, migrating the templates to Nunjucks is fairly trivial.
 
+### Usage
+
+```
+var stunjucksConfig = {
+    templateDir: 'templateDir/',
+    outputDir: 'static/',
+    routes: [
+        {
+            url: '/',
+            templateName: 'homepage.html',
+            context: {
+                'thisYear': new Date().getFullYear()
+            },
+        },
+        {
+            url: '/faq/',
+            templateName: 'faq.html',
+            context: {
+                'companyName': 'NewCo, Inc.'
+            },
+        },
+    ]
+};
+stunjucks(stunjucksConfig);
+```
+
 ### Nginx example configs
 
 The basic example:
