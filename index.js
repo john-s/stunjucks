@@ -48,7 +48,7 @@ module.exports = function(config){
     var currentDir = process.cwd();
     config = require(currentDir + '/' + config);
   }
-  // clear existing build if any
+  // delete existing build if any
   rimraf.sync('./test/static/', {});
   config.routes.map(function(route) {
     renderTemplate(config, route.url, route.templateName, route.context);
