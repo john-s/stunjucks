@@ -4,6 +4,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var nunjucks = require('nunjucks');
 var rimraf = require('rimraf');
+var process = require('process');
 
 
 var renderTemplate = function(config, url, templateName, context) {
@@ -42,9 +43,10 @@ var renderTemplate = function(config, url, templateName, context) {
 }
 
 module.exports = function(config){
-  config = config || './stunjucks.config.js';
+  config = config || 'stunjucks.config.js';
   if (Object.prototype.toString.call(config) === "[object String]"){
-    config = require(config);
+    var currentDir = process.cwd();
+    config = require(currentDir + '/' + config);
   }
   // clear existing build if any
   rimraf.sync('./test/static/', {});

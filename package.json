@@ -1,6 +1,6 @@
 {
   "name": "stunjucks",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Stunjucks is a static site pico-framework that uses the Nunjucks templating engine.",
   "main": "index.js",
   "scripts": {
