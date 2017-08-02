@@ -1,6 +1,6 @@
 {
   "name": "stunjucks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Stunjucks is a static site pico-framework that uses the Nunjucks templating engine.",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/john-s/stunjucks#readme",
   "bin": {
-    "stunjucks": "index.js"
+    "stunjucks": "./cli.js"
   },
   "dependencies": {
     "fs": "0.0.1-security",
