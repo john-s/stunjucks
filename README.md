@@ -36,6 +36,11 @@ var stunjucksConfig = {
 stunjucks(stunjucksConfig);
 ```
 
+### Testing
+
+`npm test`
+
+
 ### Nginx example configs
 
 The basic example:
