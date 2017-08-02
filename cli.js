@@ -2,4 +2,4 @@
 
 'use strict';
 var stunjucks = require('./index.js');
-stunjucks('./stunjucks.config.js');
+stunjucks('stunjucks.config.js');
