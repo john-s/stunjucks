@@ -22,7 +22,7 @@ var stunjucksConfig = {
             templateName: 'homepage.html',
             context: {
                 companyName: 'NewCo, Inc.',
-                thisYear: new Date().getFullYear()
+                currentYear: new Date().getFullYear()
             },
         },
         {
