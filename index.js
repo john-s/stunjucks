@@ -42,6 +42,7 @@ const renderTemplate = function(config, url, templateName, context) {
 }
 
 module.exports = function(config){
+  config = config || './stunjucks.config.js';
   if (Object.prototype.toString.call(config) === "[object String]"){
     config = require(config);
   }
