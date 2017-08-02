@@ -21,15 +21,15 @@ var stunjucksConfig = {
             url: '/',
             templateName: 'homepage.html',
             context: {
-                'companyName': 'NewCo, Inc.',
-                'thisYear': new Date().getFullYear()
+                companyName: 'NewCo, Inc.',
+                thisYear: new Date().getFullYear()
             },
         },
         {
             url: '/faq/',
             templateName: 'faq.html',
             context: {
-                'companyName': 'NewCo, Inc.'
+                companyName: 'NewCo, Inc.'
             },
         },
     ]
