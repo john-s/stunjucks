@@ -1,3 +1,4 @@
+[![build status](https://circleci.com/gh/john-s/stunjucks.svg?style=shield&circle-token=:circle-token)]
 # Stunjucks
 
 Stunjucks is a static site pico-framework for Node.js.  It uses [Nunjucks](https://mozilla.github.io/nunjucks/) as it's templateing engine.
