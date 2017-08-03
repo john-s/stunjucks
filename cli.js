@@ -13,10 +13,10 @@ var currentDir = process.cwd();
 // only call stunjucks if the config is loaded successfully
 var successfulConfig = true;
 try {
-    config = require(currentDir + '/' + fileName);
+    var config = require(currentDir + '/' + fileName);
 } catch (err) {
     successfulConfig = false;
-    console.error('Could not load config ' + fileName + ': ' + e.message)
+    console.error('Could not load config ' + fileName + ': ' + err.message)
 }
 if (successfulConfig){
     stunjucks(config);
