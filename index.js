@@ -43,11 +43,6 @@ var renderTemplate = function(config, url, templateName, context) {
 }
 
 module.exports = function(config){
-  config = config || 'stunjucks.config.js';
-  if (Object.prototype.toString.call(config) === "[object String]"){
-    var currentDir = process.cwd();
-    config = require(currentDir + '/' + config);
-  }
   // delete existing build if any
   rimraf.sync('./test/static/', {});
   config.routes.map(function(route) {
