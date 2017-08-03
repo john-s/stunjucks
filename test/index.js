@@ -12,15 +12,22 @@ describe('Stunjucks', function(){
                 url: '/',
                 templateName: 'test.html',
                 context: {
-                    title: 'This is a test'
-                }
-
+                    title: 'This is a '
+                },
+            },
+            {
+                url: '/test2/',
+                templateName: 'test.html'
             }
-        ]
+        ],
+        globalContext: {
+            whatItIs: 'test'
+        }
     };
     stunjucks(stunjucksConfig);
     it('renders directory structure according to config', function(){
         fs.accessSync('./test/static/index.html', fs.F_OK);
+        fs.accessSync('./test/static/test2/index.html', fs.F_OK);
     });
     it('renders templates accurately', function(){
         var data = fs.readFileSync('test/static/index.html', 'utf-8');

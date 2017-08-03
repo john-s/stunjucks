@@ -11,13 +11,13 @@ var renderTemplate = function(config, url, templateName, context) {
 
   var context = context || {};
 
-  context.config = config;
-  context.buildTime = Date.now();
+  var mergedContext = Object.assign({}, config.globalContext, context);
+  mergedContext.buildTime = Date.now();
   var templateDir = config.templateDir.replace(/\/+$/, "");
 
   nunjucks.configure(templateDir);
   function _render() {
-    nunjucks.render(templateName, context, function(err, html){
+    nunjucks.render(templateName, mergedContext, function(err, html){
       if (err) {
         console.error(err);
       }
