@@ -16,7 +16,7 @@ try {
     config = require(currentDir + '/' + fileName);
 } catch (err) {
     successfulConfig = false;
-    console.error('Could not load config ' + fileName': ' + e.message)
+    console.error('Could not load config ' + fileName + ': ' + e.message)
 }
 if (successfulConfig){
     stunjucks(config);
