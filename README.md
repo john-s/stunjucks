@@ -27,21 +27,21 @@ module.exports = {
     outputDir: 'static/',
     routes: [
         {
-            url: '/',
-            templateName: 'homepage.html',
+            url: '/landing/deserve/',
+            templateName: 'landing.html',
             context: {
-                companyName: 'NewCo, Inc.',
-                currentYear: new Date().getFullYear()
+                currentYear: new Date().getFullYear(),
+                heroCopy: 'The static site framework you deserve!'
             },
         },
         {
             url: '/faq/',
-            templateName: 'faq.html',
-            context: {
-                companyName: 'NewCo, Inc.'
-            },
+            templateName: 'faq.html'
         },
-    ]
+    ],
+    globalContext: {
+        companyName: 'NewCo, Inc.'
+    }
 };
 ```
 
@@ -65,21 +65,21 @@ var stunjucksConfig = {
     outputDir: 'static/',
     routes: [
         {
-            url: '/',
-            templateName: 'homepage.html',
+            url: '/landing/deserve/',
+            templateName: 'landing.html',
             context: {
-                companyName: 'NewCo, Inc.',
-                currentYear: new Date().getFullYear()
+                currentYear: new Date().getFullYear(),
+                heroCopy: 'The static site framework you deserve!'
             },
         },
         {
             url: '/faq/',
-            templateName: 'faq.html',
-            context: {
-                companyName: 'NewCo, Inc.'
-            },
+            templateName: 'faq.html'
         },
-    ]
+    ],
+    globalContext: {
+        companyName: 'NewCo, Inc.'
+    }
 };
 
 // Call stunjucks with config
