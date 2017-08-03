@@ -10,11 +10,47 @@ The main use case for Stunjucks is creating static sites that are served directl
 
 Another use case is quick migration of high-traffic urls off of Python frameworks that use similar templating engines, such as the [Jinja2](http://jinja.pocoo.org/) and [Django](https://www.djangoproject.com/) template engines.  By making high-traffic, non-dynamic pages (e.g. root hero page, landing pages, FAQs, about us pages) totally static, one can avoid many scalability issues. Since Nunjucks is very similar to Jinja2, and therefore the Django templating framework, migrating the templates to Nunjucks is fairly trivial.
 
-### Installation
+### Usage
+
+#### Command line usage
+
+##### Installation
+
+`npm install -g stunjucks`
+
+##### Example
+
+```
+module.exports = {
+    templateDir: 'templateDir/',
+    outputDir: 'static/',
+    routes: [
+        {
+            url: '/',
+            templateName: 'homepage.html',
+            context: {
+                companyName: 'NewCo, Inc.',
+                currentYear: new Date().getFullYear()
+            },
+        },
+        {
+            url: '/faq/',
+            templateName: 'faq.html',
+            context: {
+                companyName: 'NewCo, Inc.'
+            },
+        },
+    ]
+};
+```
+
+#### Programmatic usage
+
+##### Installation
 
 `npm install stunjucks`
 
-### Usage
+##### Example
 
 ```
 var stunjucksConfig = {
