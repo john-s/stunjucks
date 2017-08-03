@@ -20,6 +20,7 @@ Another use case is quick migration of high-traffic urls off of Python framework
 
 ##### Example
 
+In `mystunjucks.config.js`:
 ```
 module.exports = {
     templateDir: 'templateDir/',
@@ -44,6 +45,10 @@ module.exports = {
 };
 ```
 
+From the directory that contains your config file run:
+`$ stunjucks mystunjucks.config.js`
+
+
 #### Programmatic usage
 
 ##### Installation
@@ -53,6 +58,8 @@ module.exports = {
 ##### Example
 
 ```
+var stunjucks = require('stunjucks');
+
 var stunjucksConfig = {
     templateDir: 'templateDir/',
     outputDir: 'static/',
@@ -74,6 +81,8 @@ var stunjucksConfig = {
         },
     ]
 };
+
+// Call stunjucks with config
 stunjucks(stunjucksConfig);
 ```
 
